@@ -34,10 +34,10 @@ export async function GET() {
     //   }
     // }
 
-    // return NextResponse.json(
-    //   { success: true, message: "Downloaded files from Supabase successfully." },
-    //   { status: 200 },
-    // );
+    return NextResponse.json(
+      { success: true, message: "Downloaded files from Supabase successfully." },
+      { status: 200 },
+    );
   } catch (error) {
     console.error("Error downloading files from Supabase:", error);
     return NextResponse.json(
