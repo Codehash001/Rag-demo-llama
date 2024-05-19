@@ -1,0 +1,14 @@
+{
+  "experimental": {
+    "outputFileTracingIncludes": {
+      "/*": [
+        "./cache/**/*"
+      ]
+    },
+    "serverComponentsExternalPackages": [
+      "sharp",
+      "onnxruntime-node",
+      "pdf2json"
+    ]
+  }
+}
