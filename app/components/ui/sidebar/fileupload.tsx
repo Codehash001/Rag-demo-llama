@@ -17,21 +17,21 @@ const FileUpload = () => {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      setUploading(true);
-      toast.info('Start feeding dataset. This may take a while');
+    // try {
+    //   setUploading(true);
+    //   toast.info('Start feeding dataset. This may take a while');
 
-      await handleUpload();
-      await handleIngest();
-      await handleUpdateDatabase();
-    } catch (error) {
-      console.error('Error feeding dataset', error);
-      toast.error('Failed to create dataset or update database');
-    } finally {
-      await handleDelete();
-      setFiles([]);
-      setUploading(false);
-    }
+    //   await handleUpload();
+    //   await handleIngest();
+    //   await handleUpdateDatabase();
+    // } catch (error) {
+    //   console.error('Error feeding dataset', error);
+    //   toast.error('Failed to create dataset or update database');
+    // } finally {
+    //   await handleDelete();
+    //   setFiles([]);
+    //   setUploading(false);
+    // }
   };
 
   const { getRootProps, getInputProps } = useDropzone({
