@@ -1,4 +1,3 @@
-import { Loader2 } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 import ChatActions from "./chat-actions";
@@ -35,9 +34,9 @@ export default function ChatMessages(
   }, [messageLength, lastMessage]);
 
   return (
-    <div className="w-full rounded-xl bg-slate-100 p-4 shadow-xl pb-0 h-auto">
+    <div className="w-full p-4  pb-0 h-full">
       <div
-        className="flex h-[50vh] flex-grow flex-col gap-5 divide-y overflow-y-auto pb-4"
+        className="flex h-[60vh] flex-grow flex-col gap-5 divide-y overflow-y-auto pb-4"
         ref={scrollableChatContainerRef}
       >
         {props.messages.map((m) => (
@@ -45,11 +44,15 @@ export default function ChatMessages(
         ))}
         {isPending && (
           <div className="flex justify-center items-center pt-10">
-            <Loader2 className="h-4 w-4 animate-spin" />
+            <div className="flex gap-2">
+              <div className="w-3 h-3 rounded-full animate-pulse bg-primary"></div>
+              <div className="w-3 h-3 rounded-full animate-pulse bg-primary"></div>
+              <div className="w-3 h-3 rounded-full animate-pulse bg-primary"></div>
+            </div>
           </div>
         )}
       </div>
-      <div className="flex justify-end py-4">
+      <div className="flex justify-center py-4">
         <ChatActions
           reload={props.reload}
           stop={props.stop}

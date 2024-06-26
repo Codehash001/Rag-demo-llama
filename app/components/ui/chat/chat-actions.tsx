@@ -12,13 +12,13 @@ export default function ChatActions(
   return (
     <div className="space-x-4">
       {props.showStop && (
-        <Button variant="outline" size="sm" onClick={props.stop}>
+        <Button  size="sm" className="rounded-2xl" onClick={props.stop}>
           <PauseCircle className="mr-2 h-4 w-4" />
           Stop generating
         </Button>
       )}
       {props.showReload && (
-        <Button size="sm" variant={'outline'} onClick={props.reload}>
+        <Button size="sm" className="rounded-2xl" onClick={props.reload}>
           <RefreshCw className="mr-2 h-4 w-4" />
           Regenerate
         </Button>

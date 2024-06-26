@@ -27,7 +27,7 @@ export default function ChatSection() {
   });
 
   return (
-    <div className="space-y-4 max-w-5xl w-full flex flex-col justify-evenly h-full">
+    <div className="space-y-4 w-full flex flex-col justify-evenly h-full p-4">
       <ChatMessages
         messages={messages}
         isLoading={isLoading}

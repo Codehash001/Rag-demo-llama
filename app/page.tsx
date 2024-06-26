@@ -7,9 +7,8 @@ import DownloadModal from "./components/downloadModal";
 
 export default function Home() {
   return (
-    <main className="flex flex-row h-screen items-end justify-center space-x-5 p-10 bg-slate-50">
-      <ToastContainer transition={Flip}/>
-      <Sidebar/>
+    <main className="flex h-screen items-end justify-center space-x-5 bg-gradient-to-b from-indigo-50 via-purple-50/70 to-slate-50 p-8">
+      {/* <ToastContainer transition={Flip}/> */}
       <ChatSection />
     </main>
   );

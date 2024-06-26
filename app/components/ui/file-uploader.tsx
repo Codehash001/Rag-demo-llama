@@ -90,7 +90,7 @@ export default function FileUploader({
         htmlFor={inputId}
         className={cn(
           buttonVariants({ variant: "secondary", size: "icon" }),
-          "cursor-pointer",
+          "cursor-pointer rounded-2xl",
           uploading && "opacity-50",
         )}
       >

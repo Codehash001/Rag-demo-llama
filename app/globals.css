@@ -7,7 +7,7 @@
     --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 211 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
     --popover: 0 0% 100%;
@@ -75,28 +75,15 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
-    font-feature-settings:
-      "rlig" 1,
-      "calt" 1;
-  }
-  .background-gradient {
-    background-color: #fff;
-    background-image: radial-gradient(
-        at 21% 11%,
-        rgba(186, 186, 233, 0.53) 0,
-        transparent 50%
-      ),
-      radial-gradient(at 85% 0, hsla(46, 57%, 78%, 0.52) 0, transparent 50%),
-      radial-gradient(at 91% 36%, rgba(194, 213, 255, 0.68) 0, transparent 50%),
-      radial-gradient(at 8% 40%, rgba(251, 218, 239, 0.46) 0, transparent 50%);
+    @apply bg-muted text-muted-foreground overflow-hidden;
   }
 }
 
 /* Customize the scrollbar */
 ::-webkit-scrollbar {
   width: 5px; /* Width of the scrollbar */
-  margin-left: 10px;
+  margin-left: 0px;
+  margin-right: 2px;
 }
 
 ::-webkit-scrollbar-track {

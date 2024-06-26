@@ -4,6 +4,7 @@ import FileUploader from "../file-uploader";
 import { Input } from "../input";
 import UploadImagePreview from "../upload-image-preview";
 import { ChatHandler } from "./chat.interface";
+import { IoMdSend } from "react-icons/io";
 
 export default function ChatInput(
   props: Pick<
@@ -57,12 +58,16 @@ export default function ChatInput(
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-xl bg-white p-4 shadow-xl space-y-4"
+      className="rounded-3xl bg-white p-4 border shadow-lg space-y-4"
     >
       {imageUrl && (
         <UploadImagePreview url={imageUrl} onRemove={onRemovePreviewImage} />
       )}
       <div className="flex w-full items-start justify-between gap-4 ">
+      <FileUploader
+          onFileUpload={handleUploadFile}
+          onFileError={props.onFileError}
+        />
         <Input
           autoFocus
           name="message"
@@ -71,12 +76,8 @@ export default function ChatInput(
           value={props.input}
           onChange={props.handleInputChange}
         />
-        <FileUploader
-          onFileUpload={handleUploadFile}
-          onFileError={props.onFileError}
-        />
-        <Button type="submit" disabled={props.isLoading}>
-          Send message
+        <Button type="submit" disabled={props.isLoading} size={"icon"} className="rounded-full" >
+          <IoMdSend size={20}/>
         </Button>
       </div>
     </form>
