@@ -1,15 +1,15 @@
-import Header from "@/app/components/header";
-import ChatSection from "./components/chat-section";
-import Sidebar from "./components/sidebar";
-import { Flip, ToastContainer} from 'react-toastify';
+import React from 'react';
 import 'react-toastify/dist/ReactToastify.css';
-import DownloadModal from "./components/downloadModal";
+import FileUploadModal from "./components/uploadButton";
+import SpaceBackground from './components/ui/custom-bg';
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
-    <main className="flex h-screen items-end justify-center space-x-5 bg-gradient-to-b from-indigo-50 via-purple-50/70 to-slate-50 p-8">
+    <main className="relative flex h-screen items-center justify-center space-x-5 bg-gradient-to-b from-indigo-100 via-purple-300 to-violet-300 p-8 overflow-hidden">
       {/* <ToastContainer transition={Flip}/> */}
-      <ChatSection />
+      <FileUploadModal />
     </main>
   );
 }
+
+export default Home;

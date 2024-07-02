@@ -20,6 +20,9 @@ export default function ChatSection() {
     headers: {
       "Content-Type": "application/json", // using JSON because of vercel/ai 2.2.26
     },
+    body: {
+      filename: decodeURIComponent(window.location.pathname.split('/').pop() ?? "")
+    },
     onError: (error) => {
       const message = JSON.parse(error.message);
       alert(message.detail);

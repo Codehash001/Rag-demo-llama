@@ -40,7 +40,8 @@ const convertMessageContent = (
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { messages, data }: { messages: Message[]; data: any } = body;
+    const { messages, data , filename }: { messages: Message[]; data: any ; filename:string } = body;
+    console.log('fileName is', filename);
     const userMessage = messages.pop();
     if (!messages || !userMessage || userMessage.role !== "user") {
       return NextResponse.json(
@@ -52,7 +53,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const chatEngine = await createChatEngine();
+    const chatEngine = await createChatEngine(filename);
 
     // Convert message content from Vercel/AI format to LlamaIndex/OpenAI format
     const userMessageContent = convertMessageContent(
