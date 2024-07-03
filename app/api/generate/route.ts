@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
       const storageContext = await storageContextFromDefaults({
         persistDir: STORAGE_CACHE_DIR,
       });
-      const documents = await getDocuments();
+      const documents = await getDocuments("123");
       await VectorStoreIndex.fromDocuments(documents, {
         storageContext,
       });

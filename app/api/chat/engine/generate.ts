@@ -20,19 +20,19 @@ async function getRuntime(func: any) {
 async function generateDatasource() {
   console.log(`Generating storage context...`);
   // Split documents, create embeddings and store them in the storage context
-  // const ms = await getRuntime(async () => {
-  //   const storageContext = await storageContextFromDefaults({
-  //     persistDir: STORAGE_CACHE_DIR,
-  //   });
-  //   const documents = await getDocuments(
-  //     "123"
-  //     //pass the uploaded file directory here
-  //   );
-  //   await VectorStoreIndex.fromDocuments(documents, {
-  //     storageContext,
-  //   });
-  // }); 
-  console.log(`Storage context successfully generated in ${10 / 1000}s.`);
+  const ms = await getRuntime(async () => {
+    const storageContext = await storageContextFromDefaults({
+      persistDir: STORAGE_CACHE_DIR,
+    });
+    const documents = await getDocuments(
+      "123"
+      //pass the uploaded file directory here
+    );
+    await VectorStoreIndex.fromDocuments(documents, {
+      storageContext,
+    });
+  }); 
+  console.log(`Storage context successfully generated in ${ms / 1000}s.`);
 }
 
 (async () => {
